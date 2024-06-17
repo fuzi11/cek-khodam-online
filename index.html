@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cek Khodam</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+        padding: 50px;
+    }
+    button {
+        padding: 10px 20px;
+        cursor: pointer;
+        border: none;
+        background-color: #007bff;
+        color: #fff;
+        border-radius: 5px;
+        font-size: 16px;
+        margin-top: 10px;
+    }
+    input[type="text"] {
+        padding: 8px;
+        font-size: 16px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        margin-bottom: 10px;
+    }
+    #output {
+        margin-top: 20px;
+        font-size: 20px;
+        font-weight: bold;
+    }
+</style>
+</head>
+<body>
+    <h2>Cek Khodam</h2>
+    <label for="nama">Masukkan nama Anda:</label><br>
+    <input type="text" id="nama" name="nama"><br>
+    <button onclick="generateRandomData()">Dapatkan Khodam</button>
+    <div id="output"></div>
+    <link rel="stylesheet" href="style.css">
+
+    <script>
+        // Array berisi data yang akan diambil secara acak
+        var data = ['kria siamang', 'soto', 'elmanuk', 'gunung dieng', 'lele cobek', 'ikan bakar', 'sate kambing', 'messi', 'decul', 'ronaldo', 'korek kuping', 'genderowo', 'ikan mas', 'bawang putih', 'bawamg merah', 'helm rusak', 'naga hitam', 'daun jatuh', 'hordeng rumah', 'kasbon', 'alfamart', 'teko', 'sound sistem', 'waria', 'galon', 'sisir', 'stb', 'sapu lidi', 'lap basah', 'j2prime', 'bea cukai', 'mario dandy', 'jokowi', 'ganjar', 'mas anies', 'prabowo', 'sandiaga uno', 'maaruf amin', 'hitam pekat', 'laba-laba sunda', 'cicak', 'roger sumatra', 'hylos kalimantan', 'sapi kurban', 'sosok hitam', 'kabel data', 'arang putih'] ;
+
+        function generateRandomData() {
+            var nama = document.getElementById('nama').value;
+            if (nama.trim() === '') {
+                alert('Masukkan nama Anda terlebih dahulu!');
+                return;
+            }
+
+            // Memilih indeks acak dari array 'data'
+            var randomIndex = Math.floor(Math.random() * data.length);
+            // Mengambil data yang dipilih secara acak
+            var randomData = data[randomIndex];
+            // Menampilkan data random di dalam div dengan id 'output'
+            document.getElementById('output').textContent = "Halo, " + nama + "! Khodam Anda: " + randomData;
+        }
+    </script>
+</body>
+</html>
